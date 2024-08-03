@@ -30,9 +30,33 @@ resource "azurerm_network_security_group" "main" {
   name                = "my-network-sc-project1"
   location            = azurerm_resource_group.main.location
   resource_group_name = azurerm_resource_group.main.name
+  
+  security_rule {
+    name                       = "AllowLBToVM"
+    priority                   = 1000
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "80"
+    source_address_prefix      = "AzureLoadBalancer"
+    destination_address_prefix = "*"
+  }
 
   security_rule {
-    name                       = "AllowInternal"
+    name                       = "DenyAllInbound"
+    priority                   = 1100
+    direction                  = "Inbound"
+    access                     = "Deny"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  security_rule {
+    name                       = "AllowInternalInbound"
     priority                   = 1001
     direction                  = "Inbound"
     access                     = "Allow"
@@ -66,6 +90,31 @@ resource "azurerm_network_security_group" "main" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
+
+  security_rule {
+    name                       = "AllowInternalOutbound"
+    priority                   = 2000
+    direction                  = "Outbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "10.0.1.0/24"
+    destination_address_prefix = "10.0.1.0/24"
+  }
+
+  security_rule {
+    name                       = "AllowInternetOutbound"
+    priority                   = 2001
+    direction                  = "Outbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "Internet"
+  }
+ 
 }
 
 resource "azurerm_subnet_network_security_group_association" "main" {
