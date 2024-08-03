@@ -1,2 +1,8 @@
 .DS_Store
 .DS_Store?
+C1 - Azure Infrastructure Operations/terraform/terraform.tfstate
+C1 - Azure Infrastructure Operations/terraform/.terraform/providers/registry.terraform.io/hashicorp/azurerm/3.114.0/windows_386/terraform-provider-azurerm_v3.114.0_x5.exe
+C1 - Azure Infrastructure Operations/terraform/terraform.tfstate.backup
+C1 - Azure Infrastructure Operations/terraform/.terraform.lock.hcl
+C1 - Azure Infrastructure Operations/terraform/solution.plan
+C1 - Azure Infrastructure Operations/project/starter_files/packer_template.pkr.hcl
