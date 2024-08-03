@@ -600,7 +600,8 @@ Apply complete! Resources: 22 added, 1 changed, 0 destroyed.
 
 Outputs:
 
-loadbalancer_public_ip = "52.234.221.143"
+loadbalancer_public_ip = "23.96.39.63"
 
 Azure web
 ![alt text](image.png)
+
