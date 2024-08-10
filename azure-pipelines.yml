@@ -7,20 +7,14 @@ trigger:
       - 'C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/**'
 
 pool:
-  name: 'MySelfHostedPool'  # Replace with your actual pool name
+  name: 'MySelfHostedPool'  # Use your self-hosted pool
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-    addToPath: true
-
 - script: |
-    python -m venv env
-    source env/bin/activate
+    python --version
     pip install --upgrade pip
     pip install -r requirements.txt
-  displayName: 'Install dependencies'
+  displayName: 'Set up Python environment'
   workingDirectory: 'C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn'
 
 - script: |
