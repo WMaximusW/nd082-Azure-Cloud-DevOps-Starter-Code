@@ -7,7 +7,7 @@ trigger:
       - 'C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn/**'
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: 'MySelfHostedPool'  # Replace with your actual pool name
 
 steps:
 - task: UsePythonVersion@0
