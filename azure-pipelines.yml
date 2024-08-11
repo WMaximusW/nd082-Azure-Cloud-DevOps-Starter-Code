@@ -1,6 +1,7 @@
 trigger:
 
 
+
   branches:
     include:
       - main
@@ -27,6 +28,12 @@ steps:
 - script: |
     pytest
   displayName: 'Run tests'
+  workingDirectory: 'C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn'
+
+
+- script: |
+    zip -r app.zip .
+  displayName: 'Create Zip Package'
   workingDirectory: 'C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn'
 
 - task: AzureWebApp@1
