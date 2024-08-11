@@ -1,6 +1,12 @@
+[![Python application test with Github Actions](https://github.com/WMaximusW/nd082-Azure-Cloud-DevOps-Starter-Code/actions/workflows/pythonappflasksklearn.yml/badge.svg)](https://github.com/WMaximusW/nd082-Azure-Cloud-DevOps-Starter-Code/actions/workflows/pythonappflasksklearn.yml)
+
 # Overview
 
 <TODO: complete this with an overview of your project>
+
+This project is a "Flask-based web application" that "predicts housing prices based on various input features using a pre-trained machine learning model.".
+
+The application is deployed on Azure App Service and utilizes a continuous integration and continuous deployment (CI/CD) pipeline powered by GitHub Actions and Azure Pipelines. The CI/CD pipeline ensures that any changes pushed to the repository are automatically tested, built, and deployed.
 
 ## Project Plan
 <TODO: Project Plan
@@ -60,6 +66,11 @@ Port: 443
 ## Enhancements
 
 <TODO: A short description of how to improve the project in the future>
+
+- **Add More Features**: Implement additional endpoints for more complex operations.
+- **Improve Testing**: Expand test coverage to include edge cases and use more advanced testing tools.
+- **Optimize Performance**: Focus on optimizing database queries and caching responses for better performance.
+- **Extend CI/CD**: Integrate security scanning tools and automate monitoring setups.
 
 ## Demo 
 
