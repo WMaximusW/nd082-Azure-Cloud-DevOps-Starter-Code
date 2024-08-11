@@ -80,3 +80,5 @@ Port: 443
 https://youtu.be/5WH2PfEL6zc
 
 
+## Command
+![alt text](<Screenshot 2024-08-11 143426-command-result.png>)
