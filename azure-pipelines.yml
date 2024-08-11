@@ -32,7 +32,7 @@ steps:
 
 
 - script: |
-    zip -r app.zip .
+    Compress-Archive -Path * -DestinationPath app.zip
   displayName: 'Create Zip Package'
   workingDirectory: 'C2-AgileDevelopmentwithAzure/project/starter_files/flask-sklearn'
 
