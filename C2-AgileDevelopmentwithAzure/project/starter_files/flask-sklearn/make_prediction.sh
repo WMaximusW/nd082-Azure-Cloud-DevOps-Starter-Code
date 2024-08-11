@@ -26,3 +26,6 @@ curl -d '{
 }'\
      -H "Content-Type: application/json" \
      -X POST http://localhost:$PORT/predict
+
+# Prevent the script from closing
+read -p "Press any key to exit..."
