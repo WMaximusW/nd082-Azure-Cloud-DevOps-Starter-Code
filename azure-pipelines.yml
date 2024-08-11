@@ -1,5 +1,6 @@
 trigger:
 
+
   branches:
     include:
       - main
@@ -30,6 +31,7 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
+    azureSubscription: 'TrungNQ72-Project2'
     appType: 'webAppLinux'
     appName: 'trungnq72-project2'
     package: '$(System.DefaultWorkingDirectory)/**/*.zip'
