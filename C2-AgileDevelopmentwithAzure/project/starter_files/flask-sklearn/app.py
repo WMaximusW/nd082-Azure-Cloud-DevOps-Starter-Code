@@ -1,6 +1,12 @@
+"""
+This module implements a Flask application that provides a prediction service
+using a machine learning model trained on housing data.
+"""
+import logging
+
 from flask import Flask, request, jsonify
 from flask.logging import create_logger
-import logging
+from joblib.externals.loky.process_executor import TerminatedWorkerError
 
 import pandas as pd
 import joblib
@@ -20,15 +26,18 @@ def scale(payload):
 
 @app.route("/")
 def home():
+    """Home"""
     html = "<h3>Sklearn Prediction Home</h3>"
     return html.format(format)
 
 # TO DO:  Log out the prediction value
 @app.route("/predict", methods=['POST'])
 def predict():
+    """Predict"""
+
     # Performs an sklearn prediction
     try:
-        # Load pretrained model as clf. Try any one model. 
+        # Load pretrained model as clf. Try any one model.
         clf = joblib.load("./Housing_price_model/LinearRegression.joblib")
         # clf = joblib.load("./Housing_price_model/StochasticGradientDescent.joblib")
         # clf = joblib.load("./Housing_price_model/GradientBoostingRegressor.joblib")
@@ -38,9 +47,9 @@ def predict():
     except TerminatedWorkerError as e:
         LOG.error("Error loading model: %s", str(e))
         return "Model loading failed", 500
-    except Exception as e:
-        LOG.error("Unexpected error: %s", str(e))
-        return "Unexpected error", 500
+    except OSError as e:
+        LOG.error("OS error during model loading: %s", str(e))
+        return "Model loading failed", 500
 
     json_payload = request.json
     LOG.info("JSON payload: %s", json_payload)
