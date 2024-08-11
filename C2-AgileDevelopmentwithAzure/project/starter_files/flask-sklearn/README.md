@@ -21,6 +21,8 @@ https://docs.google.com/spreadsheets/d/1u9QLL-piIKXY_sCHM8Fao3HFqIfKvcNvLcPr0PVZ
 <TODO:  
 * Architectural Diagram (Shows how key parts of the system work)>
 
+![alt text](image.png)
+
 <TODO:  Instructions for running the Python project.  How could a user with no context run this project without asking you for any help.  Include screenshots with explicit steps to create that work. Be sure to at least include the following screenshots:
 
 * Project running on Azure App Service
